@@ -1,13 +1,16 @@
-import { ComponentType } from "../components/table/table.model";
+import {
+  ComponentType,
+  TableColumnConfiguration,
+  TableDataConfiguration,
+} from '../components/table/table.model';
 
-export const columnData =  [
+export const columnData: TableColumnConfiguration[] = [
   {
     identifier: 'header',
     label: 'Title',
-    componentType: ComponentType.TEMPLATEREF,
+    componentType: ComponentType.TEXTBOX,
     isEditable: false,
     isVisible: true,
-    customCellTemplate: this.titleTemplate,
   },
   {
     identifier: 'content',
@@ -19,9 +22,8 @@ export const columnData =  [
   {
     identifier: 'url',
     label: 'External link',
-    componentType: ComponentType.TEMPLATEREF,
+    componentType: ComponentType.LINK,
     isVisible: true,
-    customCellTemplate: this.linkTemplate,
   },
   {
     identifier: 'actions',
@@ -31,7 +33,7 @@ export const columnData =  [
   },
 ];
 
-export const rowDatas = [
+export const rowDatas: TableDataConfiguration[] = [
   {
     header: 'Angular',
     content: 'Angular is a development platform, built on TypeScript',

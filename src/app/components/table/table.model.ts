@@ -1,7 +1,7 @@
 import { TemplateRef } from '@angular/core';
 
 export interface TableColumnConfiguration {
-  identifier: identifierType;
+  identifier: keyof TableDataConfiguration;
   label: string;
   componentType: ComponentType;
   isVisible: boolean;
@@ -9,7 +9,6 @@ export interface TableColumnConfiguration {
   width?: number;
   customCellTemplate?: TemplateRef<any>;
 }
-type identifierType = Partial<keyof TableDataConfiguration>;
 
 export interface TableDataConfiguration {
   header: string;

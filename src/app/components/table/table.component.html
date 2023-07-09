@@ -39,20 +39,22 @@
                 </ng-container>
               </td>
               <td *ngSwitchCase="'link'">
-                <ng-container *ngIf="row.url">
+                <ng-container *ngIf="row.url; else readonlyColTemplate">
                   <a [href]="row.url.urlHref" target="_blank">{{
-                    row[col.identifier].label
+                    row.url.label
                   }}</a>
                 </ng-container>
               </td>
               <td *ngSwitchCase="'templateRef'">
-                <ng-container
-                  [ngTemplateOutlet]="col.customCellTemplate"
-                  [ngTemplateOutletContext]="{
-                    $implicit: row,
-                    column: col
-                  }"
-                ></ng-container>
+                <ng-container *ngIf="col.customCellTemplate">
+                  <ng-container
+                    [ngTemplateOutlet]="col.customCellTemplate"
+                    [ngTemplateOutletContext]="{
+                      $implicit: row,
+                      column: col
+                    }"
+                  ></ng-container>
+                </ng-container>
               </td>
               <td *ngSwitchDefault>
                 <ng-container

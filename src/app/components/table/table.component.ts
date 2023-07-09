@@ -11,8 +11,8 @@ import { columnData, rowDatas } from 'src/app/constants/table_content';
   styleUrls: ['./table.component.css'],
 })
 export class TableComponent {
-  @Input() columns!: TableColumnConfiguration[];
-  @Input() rowDatas!: TableDataConfiguration[];
+  @Input() columns: TableColumnConfiguration[];
+  @Input() rowDatas: TableDataConfiguration[];
   @Output() menuClick: EventEmitter<TableDataConfiguration> =
     new EventEmitter();
   constructor() {
