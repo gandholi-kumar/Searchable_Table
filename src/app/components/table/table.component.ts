@@ -4,6 +4,7 @@ import {
   TableDataConfiguration,
 } from './table.model';
 import { columnData, rowDatas } from 'src/app/constants/table_content';
+import { EmployeeService } from 'src/app/services/employee.service';
 
 @Component({
   selector: 'app-table',
@@ -11,17 +12,19 @@ import { columnData, rowDatas } from 'src/app/constants/table_content';
   styleUrls: ['./table.component.css'],
 })
 export class TableComponent {
-  @Input() columns: TableColumnConfiguration[];
-  @Input() rowDatas: TableDataConfiguration[];
+  @Input() columns!: TableColumnConfiguration[];
+  @Input() rowDatas!: TableDataConfiguration[];
   @Output() menuClick: EventEmitter<TableDataConfiguration> =
     new EventEmitter();
-  constructor() {
-    this.columns = columnData;
-    this.rowDatas = rowDatas;
+  constructor(private employeeService: EmployeeService) {
+    // this.columns = columnData;
+    // this.rowDatas = rowDatas;
   }
 
   ngOnInit() {
     console.log('DataTableComponent', this.columns);
+    // const empData = this.employeeService.getEmployee();
+    // console.log(empData);
   }
 
   onMenuClick(rowData: TableDataConfiguration) {

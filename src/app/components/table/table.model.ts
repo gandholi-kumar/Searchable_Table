@@ -6,13 +6,17 @@ export interface TableColumnConfiguration {
   componentType: ComponentType;
   isVisible: boolean;
   isEditable?: boolean;
+  isSortable?: boolean;
+  isFilterable?: boolean;
   width?: number;
+  showTooltip?: boolean;
   customCellTemplate?: TemplateRef<any>;
 }
 
 export interface TableDataConfiguration {
   header: string;
   content: string;
+  [key: string]: any;
   actions?: boolean;
   url?: TableURL;
 }

@@ -11,6 +11,7 @@ export const columnData: TableColumnConfiguration[] = [
     componentType: ComponentType.TEXTBOX,
     isEditable: false,
     isVisible: true,
+    width: 10,
   },
   {
     identifier: 'content',
@@ -18,18 +19,21 @@ export const columnData: TableColumnConfiguration[] = [
     componentType: ComponentType.TEXTBOX,
     isEditable: false,
     isVisible: true,
+    width: 40,
   },
   {
     identifier: 'url',
     label: 'External link',
     componentType: ComponentType.LINK,
     isVisible: true,
+    width: 30,
   },
   {
     identifier: 'actions',
     label: 'Actions',
     componentType: ComponentType.OPTIONS,
     isVisible: true,
+    width: 10,
   },
 ];
 
@@ -68,3 +72,4 @@ export const rowDatas: TableDataConfiguration[] = [
     actions: true,
   },
 ];
+

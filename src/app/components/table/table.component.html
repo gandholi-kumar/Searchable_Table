@@ -2,7 +2,7 @@
   <thead>
     <ng-container *ngFor="let col of columns">
       <ng-container *ngIf="col.isVisible">
-        <th>
+        <th [ngStyle]="{'width.%':col.width}">
           {{ col.label }}
         </th>
       </ng-container>
